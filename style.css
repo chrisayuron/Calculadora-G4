@@ -23,6 +23,13 @@ html,body,main{
     height: 40px;
     width: 90%;
     border: solid 1px;
+    text-align: right;
+    padding-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    font-size: 25px;
+
 }
 
 .operaciones{
@@ -34,6 +41,12 @@ html,body,main{
 input[type=text]{
     width: 60px;
     height: 40px;
+}
+#simbolo{
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    text-align: center;
 }
 
 .botones{
