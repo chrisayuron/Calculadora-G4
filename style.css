@@ -48,11 +48,12 @@ input[type=text]{
     margin: 5px;
 }
 @media (max-width:800px){
-
-
     .boton{
         height: 30px;
         width: 30px;
         margin: 5px;
+    }
+    body{
+        background-color: bisque;
     }
 }
