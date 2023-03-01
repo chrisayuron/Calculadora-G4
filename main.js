@@ -1,35 +1,70 @@
 let resultado=''
+let num=''
+const num1=document.getElementById('num1')
+const display=document.getElementById('display')
 function mostrar(){
-        document.getElementById('display').innerText=resultado
+        switch(simbolo.innerText){
+            case '+':
+               resultado=num+parseInt(num1.value)
+               console.log(resultado)
+                break
+            case '-':
+                resultado=num-parseInt(num1.value)
+                break
+            case '*':
+                resultado=num*parseInt(num1.value)
+                break
+            case '/':
+                resultado=num/parseInt(num1.value)
+                break 
+        }
+        display.innerText=resultado
+        simbolo.innerText=''
+        num1.value=''
+        num=''
+
 }
 
 function operador(operando){
-    switch(operando){
-        case '+':
-            resultado=parseInt(num1.value) + parseInt(num2.value)
-            simbolo.innerText='+'
-            break
-        case '-':
-            resultado=parseInt(num1.value) - parseInt(num2.value)
-            simbolo.innerText='-'
-            break
-        case '*':
-            resultado=parseInt(num1.value) * parseInt(num2.value)
-            simbolo.innerText='*'
-            break
-        case '/':
-            resultado=parseInt(num1.value) / parseInt(num2.value)
-            simbolo.innerText='/'
-            break
-        case 'ac':
-            resultado=''
-            simbolo.innerText=''
-            num1.value=''
-            num2.value=''
-            mostrar()
-        default:
-            resultado=''
-            simbolo.innerText=''
-            mostrar()
+    if(num==''){
+        num=parseInt(num1.value)
+        num1.value=''
+        switch(operando){
+            case '+':
+                simbolo.innerText='+'
+                break
+            case '-':
+                simbolo.innerText='-'
+                break
+            case '*':
+                simbolo.innerText='*'
+                break
+            case '/':
+                simbolo.innerText='/'
+                break
+        }
+    }else{
+        switch(operando){
+            case '+':
+                simbolo.innerText='+'
+                break
+            case '-':
+                simbolo.innerText='-'
+                break
+            case '*':
+                simbolo.innerText='*'
+                break
+            case '/':
+                simbolo.innerText='/'
+                break
+        }
     }
+}
+
+function limpiar(){
+        resultado=''
+        simbolo.innerText=''
+        num1.value=''
+        num=''
+        display.innerText=''
 }
